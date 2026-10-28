@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OTOUR — Catherine Ashraf</title>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@300;400;500;600&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="branding.css"></head><body class="otour">
+<header class="nav"><a href="index.html" class="logo">CA</a><nav class="sub-nav"><a href="branding.html">Branding</a><a href="index.html#works" class="back">← Back to portfolio</a></nav></header>
+<section class="ot-hero"><div class="reveal"><img src="assets/branding/otour/main.webp" alt="OTOUR perfume bottle"></div>
+<div class="ot-text reveal"><span class="ot-label">BRANDING &amp; VISUAL IDENTITY</span>
+<div class="ot-lang" id="en" lang="en"><h1><b>OTOUR</b> — A Journey of Femininity and Beauty</h1>
+<p><strong>OTOUR</strong> is a refined feminine fragrance that draws its beauty from the delicacy of roses and the allure of luxurious perfumes, giving every moment a sense of freshness, lightness, and femininity. The brand unites the softness of flowers with the elegance of fine details, in a scent experience that evokes a dreamy journey into a world of beauty and sophistication.</p>
+<p>Its visual identity reflects a calm, romantic atmosphere, where shades of pink and violet harmonize with golden touches to embody delicacy, serenity, and luxury. The crystal bottle design and its shimmering reflections give the fragrance an elegant presence that catches the eye and leaves an unforgettable impression.</p>
+<p>The name <strong>OTOUR</strong> is inspired by the Arabic word «عطر» (perfume) and the word <em>Tour</em>, meaning a journey, expressing a sensory voyage between the scent of roses and the beauty of moments — where a fragrance becomes a memory, and perfume becomes a personal signature of a woman's femininity and elegance.</p>
+<p class="ot-close">OTOUR — A journey that begins with a rose, and stays in memory.</p></div>
+<div class="ot-lang hidden fade" id="ar" lang="ar"><h1><b>OTOUR</b> — رحلة من الأنوثة والجمال</h1>
+<p><strong>OTOUR</strong> هو عطر أنثوي راقٍ يستلهم جماله من رقة الورود وسحر العطور الفاخرة، ليمنح كل لحظة إحساسًا بالانتعاش والخفة والأنوثة. يجمع البراند بين نعومة الأزهار وفخامة التفاصيل، في تجربة عطرية تحاكي رحلة حالمة تأخذك إلى عالم من الجمال والرقي.</p>
+<p>تعكس هويته البصرية أجواءً رومانسية هادئة، تتناغم فيها درجات الوردي والبنفسجي مع اللمسات الذهبية، لتجسّد الرقة والصفاء والفخامة. أما تصميم الزجاجة الكريستالي وانعكاساته المتلألئة، فيضفيان على العطر حضورًا أنيقًا يجذب الأنظار ويترك انطباعًا لا يُنسى.</p>
+<p>استُلهم اسم <strong>OTOUR</strong> من كلمتي «عطر» و <em>Tour</em>، بمعنى جولة، ليعبّر عن رحلة حسية بين عبير الورود وجمال اللحظات، حيث تتحول الرائحة إلى ذكرى، والعطر إلى بصمة شخصية تعبّر عن أنوثة المرأة وأناقتها.</p>
+<p class="ot-close">OTOUR — جولة تبدأ من وردة، وتبقى في الذاكرة.</p></div>
+<button class="toggle" id="tg" lang="ar">العربية</button></div></section>
+<h2 class="ot-title"><span class="pill">GALLERY</span></h2>
+<section class="gallery" id="gal"><button><img src="assets/branding/otour/main.webp" alt="OTOUR main visual" loading="lazy"></button><button><img src="assets/branding/otour/logo.webp" alt="OTOUR logo" loading="lazy"></button><button><img src="assets/branding/otour/poster.webp" alt="OTOUR poster" loading="lazy"></button><button><img src="assets/branding/otour/package-1.webp" alt="OTOUR packaging" loading="lazy"></button><button><img src="assets/branding/otour/package-2.webp" alt="OTOUR packaging" loading="lazy"></button><button><img src="assets/branding/otour/billboard.webp" alt="OTOUR billboard" loading="lazy"></button><button><img src="assets/branding/otour/rollup-1.webp" alt="OTOUR roll-up banner" loading="lazy"></button><button><img src="assets/branding/otour/rollup-2.webp" alt="OTOUR roll-up banner" loading="lazy"></button></section>
+<div class="lb" id="lb"><img id="lbi" alt=""><button class="x" aria-label="Close">×</button><button class="pv" aria-label="Previous">‹</button><button class="nx" aria-label="Next">›</button></div>
+<footer><a href="branding.html" style="color:#7a4fa8">← All branding projects</a> · © 2026 Catherine Ashraf</footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const en=document.getElementById('en'),ar=document.getElementById('ar'),tg=document.getElementById('tg');let isAr=false;
+tg.onclick=()=>{const [from,to]=isAr?[ar,en]:[en,ar];from.classList.add('fade');setTimeout(()=>{from.classList.add('hidden');to.classList.remove('hidden');requestAnimationFrame(()=>requestAnimationFrame(()=>to.classList.remove('fade')))},450);isAr=!isAr;tg.textContent=isAr?'English':'العربية';tg.lang=isAr?'en':'ar';};
+const imgs=[...document.querySelectorAll('#gal img')],lb=document.getElementById('lb'),li=document.getElementById('lbi');let k=0;
+const show=i=>{k=(i+imgs.length)%imgs.length;li.src=imgs[k].src;li.alt=imgs[k].alt;lb.classList.add('open')};
+imgs.forEach((im,i)=>im.parentElement.onclick=()=>show(i));
+lb.querySelector('.x').onclick=()=>lb.classList.remove('open');lb.querySelector('.pv').onclick=e=>{e.stopPropagation();show(k-1)};lb.querySelector('.nx').onclick=e=>{e.stopPropagation();show(k+1)};
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('open')};
+addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key=='Escape')lb.classList.remove('open');if(e.key=='ArrowLeft')show(k-1);if(e.key=='ArrowRight')show(k+1)});
+</script></body></html>
