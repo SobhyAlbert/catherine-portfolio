@@ -46,7 +46,7 @@ const exitLand=async(fromHist)=>{if(!land)return;land=false;rot=false;hero.class
  try{screen.orientation&&screen.orientation.unlock&&screen.orientation.unlock()}catch(e){}
  if(document.fullscreenElement&&document.exitFullscreen){try{await document.exitFullscreen()}catch(e){}}
  if(histPushed&&!fromHist){histPushed=false;try{history.back()}catch(e){}}histPushed=false;
- const m=document.querySelector('meta[name=viewport]');if(m)m.setAttribute('content','width=device-width, initial-scale=1');
+ const m=document.querySelector('meta[name=viewport]');if(m){const c='width=device-width, initial-scale=1';m.setAttribute('content',c+', maximum-scale=1');setTimeout(()=>m.setAttribute('content',c),400)}
  settle()};
 const open=()=>{if(opened||busy)return;if(isMob())enterLand();busy=true;opened=true;pos=0;render();cb.src=seq[0];
  hero.classList.add('reading');const w=parseFloat(book.style.getPropertyValue('--w'));
@@ -55,7 +55,7 @@ const open=()=>{if(opened||busy)return;if(isMob())enterLand();busy=true;opened=t
  if(!land)hero.scrollIntoView({behavior:'smooth',block:'start'});
  setTimeout(()=>{cover.style.visibility='hidden';busy=false},1450)};
 const shut=fromHist=>{exitLand(fromHist);cover.style.visibility='';book.style.transition='none';book.style.transform='';book.querySelectorAll('.leaf').forEach(l=>l.remove());busy=false;book.classList.remove('open');hero.classList.remove('reading');opened=false;pos=0;render();
- requestAnimationFrame(()=>{book.style.transition='';scrollTo(0,savedY)})};
+ requestAnimationFrame(()=>{book.style.transition='';scrollTo(0,savedY)});setTimeout(()=>scrollTo(0,savedY),450)};
 addEventListener('popstate',()=>{if(land&&opened){histPushed=false;shut(true)}});
 document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&land&&opened&&histPushed===true&&!document.hidden){/* user left fullscreen via system UI */shut(false)}});
 const closeB=()=>{if(busy)return;if(land){shut(false);return}cover.style.visibility='';book.classList.remove('open');busy=true;setTimeout(()=>{hero.classList.remove('reading');opened=false;busy=false;pos=0;render()},1300)};
