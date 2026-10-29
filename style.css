@@ -1,3 +1,6 @@
+:root{color-scheme:light only}html{color-scheme:light only;background:#FBF1E8;color:#4a3a3a;forced-color-adjust:none}
+body{background-color:#FBF1E8;color:#4a3a3a}input,textarea,select,button{color-scheme:light only}
+@media (prefers-color-scheme:dark){:root,html{color-scheme:light only}html{background:#FBF1E8!important}body{background-color:#FBF1E8!important;color:#4a3a3a}}
 :root{--cream:#FBF1E8;--coral:#F07A7A;--pink:#F7B5C0;--ink:#4a3a3a;--g:linear-gradient(135deg,#F07A7A,#F7B5C0)}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{font-family:Poppins,sans-serif;background:var(--cream);color:var(--ink);font-size:15px;line-height:1.75;overflow-x:hidden}
