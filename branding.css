@@ -29,3 +29,13 @@
 .lb .x{top:20px;right:20px}.lb .pv{left:20px}.lb .nx{right:20px}
 .ot-title{text-align:center;padding-top:2vw}
 @media(max-width:900px){.ot-hero{grid-template-columns:1fr}}
+
+#gal{padding:1vw 6vw 6vw;display:grid;gap:4.5vw}
+.ghead{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid #c9a24a66;padding-bottom:10px;margin-bottom:22px}
+.gnum{font:1rem Poppins,sans-serif;color:#c9a24a;letter-spacing:.15em}
+.ghead h3{font:clamp(1.8rem,3.5vw,2.6rem) Italiana,serif;color:#7a4fa8;margin:0}
+.gcount{margin-left:auto;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#b48}
+.ggrid{display:grid;gap:20px;justify-content:center}.ggrid.n1{grid-template-columns:minmax(0,640px)}.ggrid.n2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ggrid button{padding:0;border:0;border-radius:20px;overflow:hidden;cursor:zoom-in;box-shadow:0 10px 26px #7a4fa826;background:none}
+.ggrid img{width:100%;display:block;transition:transform .6s}.ggrid button:hover img{transform:scale(1.04)}
+@media(max-width:560px){.ggrid.n2{grid-template-columns:1fr}}
