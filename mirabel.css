@@ -72,3 +72,6 @@
 .sgrid .stk:nth-child(odd){transform:rotate(-2.5deg)}.sgrid .stk:nth-child(even){transform:rotate(2deg)}
 .stk:hover{animation:wiggle .5s ease-in-out;transform:scale(1.05) rotate(0)!important}
 @keyframes wiggle{0%,100%{rotate:0deg}25%{rotate:-3deg}75%{rotate:3deg}}
+
+.ggrid.mk{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.ggrid.mk button:first-child{grid-column:1/-1}.ggrid.mk img{width:100%;display:block}@media(max-width:700px){.ggrid.mk{grid-template-columns:1fr}}
+.ggrid.mk button:not(:first-child) img{aspect-ratio:16/9;object-fit:cover}
